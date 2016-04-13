@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Contador Feriados</string>
+    <string name="action_settings">Configuración</string>
+    <string name="invalidDate">La fecha inicial debe ser menor que la del fin del viaje.</string>
+</resources>

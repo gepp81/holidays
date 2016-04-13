@@ -1,0 +1,111 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ar.com.gep.holydays.MainActivityFragment"
+    tools:showIn="@layout/activity_main">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ingrese la fecha de inicio y la fecha de fin del viaje." />
+
+            <LinearLayout
+                android:id="@+id/datepickers"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/textView"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <DatePicker
+                    android:id="@+id/datePicker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="120dp"
+                    android:layout_below="@+id/textView"
+                    android:calendarViewShown="false"
+                    android:datePickerMode="spinner" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/datepickers2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/datepickers"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <DatePicker
+                    android:id="@+id/datePicker2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="120dp"
+                    android:calendarViewShown="false"
+                    android:datePickerMode="spinner" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/checkboxes"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/datepickers2"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/checkSabado"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignTop="@+id/checkDomingo"
+                    android:checked="true"
+                    android:text="Sabado" />
+
+                <CheckBox
+                    android:id="@+id/checkDomingo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/datePicker"
+                    android:layout_toEndOf="@+id/checkSabado"
+                    android:layout_toRightOf="@+id/checkSabado"
+                    android:checked="true"
+                    android:text="Domingo" />
+
+                <CheckBox
+                    android:id="@+id/checkFeriado"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/datePicker2"
+                    android:layout_toEndOf="@+id/checkDomingo"
+                    android:layout_toRightOf="@+id/checkDomingo"
+                    android:checked="false"
+                    android:text="Feriado" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/button"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/checkboxes"
+                android:layout_centerHorizontal="true"
+                android:clickable="false"
+                android:onClick="setContentView"
+                android:text="Calcular" />
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
